@@ -20,7 +20,6 @@ import javax.sql.DataSource;
 )
 public class MysqlJPAConfig {
     @Bean
-    @Primary
     LocalContainerEntityManagerFactoryBean mysqlEntityManager
             (EntityManagerFactoryBuilder builder, @Qualifier("mysqlDatasource") DataSource dataSource) {
        return builder.dataSource(dataSource).packages("com.mds.poc.mysqlentity").build();
